@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Unlock Copy and Paste",
+  "version": "1.0",
+  "description": "Allows you to copy and paste on websites that block these actions.",
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"], 
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}
+
